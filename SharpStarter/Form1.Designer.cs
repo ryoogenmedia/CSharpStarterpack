@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelSideMenu = new Panel();
             panelSubSetting = new Panel();
             btnProfil = new Button();
@@ -35,8 +36,13 @@
             btnSetting = new Button();
             btnDashboard = new Button();
             panelLogo = new Panel();
+            panelPlayer = new Panel();
+            panelChildForm = new Panel();
+            pictureBox1 = new PictureBox();
             panelSideMenu.SuspendLayout();
             panelSubSetting.SuspendLayout();
+            panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelSideMenu
@@ -78,6 +84,7 @@
             btnProfil.Text = "Profil";
             btnProfil.TextAlign = ContentAlignment.MiddleLeft;
             btnProfil.UseVisualStyleBackColor = true;
+            btnProfil.Click += btnProfil_Click;
             // 
             // btnAkun
             // 
@@ -93,6 +100,7 @@
             btnAkun.Text = "Akun";
             btnAkun.TextAlign = ContentAlignment.MiddleLeft;
             btnAkun.UseVisualStyleBackColor = true;
+            btnAkun.Click += btnAkun_Click;
             // 
             // btnSetting
             // 
@@ -128,22 +136,54 @@
             // 
             // panelLogo
             // 
+            panelLogo.Controls.Add(pictureBox1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(250, 100);
             panelLogo.TabIndex = 0;
             // 
+            // panelPlayer
+            // 
+            panelPlayer.BackColor = Color.FromArgb(23, 21, 32);
+            panelPlayer.Dock = DockStyle.Bottom;
+            panelPlayer.Location = new Point(250, 399);
+            panelPlayer.Name = "panelPlayer";
+            panelPlayer.Size = new Size(550, 51);
+            panelPlayer.TabIndex = 1;
+            // 
+            // panelChildForm
+            // 
+            panelChildForm.BackColor = Color.FromArgb(32, 30, 45);
+            panelChildForm.Dock = DockStyle.Fill;
+            panelChildForm.Location = new Point(250, 0);
+            panelChildForm.Name = "panelChildForm";
+            panelChildForm.Size = new Size(550, 399);
+            panelChildForm.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-3, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(253, 77);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelChildForm);
+            Controls.Add(panelPlayer);
             Controls.Add(panelSideMenu);
             Name = "Form1";
             Text = "Form1";
             panelSideMenu.ResumeLayout(false);
             panelSubSetting.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -156,5 +196,8 @@
         private Button btnProfil;
         private Button btnAkun;
         private Button btnSetting;
+        private Panel panelPlayer;
+        private Panel panelChildForm;
+        private PictureBox pictureBox1;
     }
 }
